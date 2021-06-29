@@ -14,6 +14,16 @@ https://github.com/kacel33/yolo_frame_skip_trt
 ## YOLO_Tracker에서 바뀐 점
 + 저는 YOLO를 많이 사용하지 않기 위해서 skip_frame을 tracker_frame으로 변경하였습니다.
 * yolo_frame에서는 YOLO를 사용하여 물체를 detect합니다. tracker_frame에서는 yolo_frame에서 얻은 BoundingBOX를 이용하여 opencv Tracker함수로 tracking합니다.
+#
+## 환경설정은 https://github.com/jkjung-avt/tensorrt_demos(Demo#5)로 하시면 됩니다.
+tensorrt_demos폴더에 yolo_tracker.py를 옮겨주시고 실행해주세요.
+## 코드 실행
+<pre><code>python yolo_tracker.py --video {VIDEOFILE} -m {YOLOFILE} -n {tracker frame number}</code></pre>
+
+## Example
+<pre><code>python yolo_tracker.py --video video/original.mp4 -m yolov4-416 -n 10</code></pre>
 
 
+# License
+I refered source code of "https://github.com/jkjung-avt/tensorrt_demos" and change trt_yolo.py to yolo_tracker.py
 
