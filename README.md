@@ -23,6 +23,13 @@ tensorrt_demos폴더에 yolo_tracker.py를 옮겨주시고 실행해주세요.
 ## Example
 <pre><code>python yolo_tracker.py --video video/original.mp4 -m yolov4-416 -n 10</code></pre>
 
+# 실험결과
++ RTX3080에서 yolo_frame의 경우 0.006초, MOSSE_tracker_frame의 경우 0.01~0.02초가 나와서 오히려 더 느려졌습니다.  
++ tracker함수가 CPU에서 동작하기 때문에 느려진 것 같습니다.  
++ N은 10이하로 하는 것이 좋을 듯 합니다.  
++ CSRT는 너무 느려서 MOSSE로만 실험하였습니다.  
++ 이 아이디어의 의의는 skip_frame에서는 n이 많아야 2~3이 최대였는데, tracker_frame으로 변경 후 n을 더 크게 할 수 있다는 점에 있습니다.
+### Tracker함수의 성능이 좋지 않았습니다.
 
 # License
 I refered source code of "https://github.com/jkjung-avt/tensorrt_demos" and change trt_yolo.py to yolo_tracker.py
