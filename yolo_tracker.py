@@ -46,7 +46,6 @@ def parse_args():
     )
     args = parser.parse_args()
     return args
-
 if __name__ == '__main__':
     args = parse_args()
     
@@ -69,7 +68,7 @@ if __name__ == '__main__':
                         
                 trackers = cv2.legacy.MultiTracker_create()
                 for i in range(len(boxes)):
-                    trackers.add(cv2.legacy.TrackerCSRT_create(), img, boxes[i])
+                    trackers.add(cv2.legacy.TrackerMOSSE_create(), img, tuple(boxes[i]))
                 print(trackers)
                 N_frame = 0
 
@@ -80,7 +79,6 @@ if __name__ == '__main__':
                 custom_boxes = np.array(custom_boxes)
                 custom_boxes = custom_boxes.astype(np.int64)
                 custom_boxes = list(custom_boxes)
-                
                 
                 img = vis.draw_bboxes(img, custom_boxes, confs, clss)
                 cv2.imshow('video', img)
