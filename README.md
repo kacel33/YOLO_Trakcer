@@ -1,6 +1,7 @@
 # YOLO_Trakcer
 전에 YOLO를 구동할 때 frame skip알고리즘을 frame tracker로 바꿨습니다.
 frame skip알고리즘은 아래를 참조해 주세요.
+
 #
 #### YOLO Frame skip(opencv)
 https://github.com/kacel33/yolo_skip_frame
@@ -8,6 +9,8 @@ https://github.com/kacel33/yolo_skip_frame
 https://github.com/kacel33/yolo_frame_skip_trt
 #
 
+## 학술대회 논문  
+https://www.koreascience.or.kr/article/CFKO202133648827922.pdf  
 
 #### frame skip알고리즘은 yolo_frame에서 YOLO를 사용하고 skip_frame에서는 YOLO를 사용하지 않고 yolo_frame에서 얻은 BoundingBOX를 사용하는 것입니다. 이 알고리즘에서는 skip_frame수가 많아질수록 오차가 커질 것입니다. 저는 이 전에 1 frame을 skip해서 1.5배의 계산속도가 향상되었습니다.
 #### frame_skip_number=1일 때는 오차가 사람이 알아보기 힘든 정도였지만 10정도가 되면 물체가 움직이므로 오차가 많이 커졌습니다.
